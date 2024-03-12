@@ -36,9 +36,9 @@ app.get('/read/usernames', (req, res) => {
   res.send(usernames);
 });
 
-app.use('/read/usernames', addMsgToRequest);
+app.use('/read/username', addMsgToRequest);
 
-app.get('/read/usernames', (req, res) => {
+app.get('/read/username/:name', (req, res) => {
   let name = req.params.name;
   let users_with_name = req.users.filter(function(user) {
     return user.username === name
